@@ -1,0 +1,17 @@
+{
+    "key": {
+        "api_key": "",
+        "secret": ""
+    },
+    "data":{
+        "symbol": "BTC/USDT",
+        "since": "2022-11-24T00:00:00Z",
+        "timeframe": "4h"
+    },
+    "policy":{
+        "timestep": 5,
+        "trigger": 1,
+        "ohlcvm": "mean"
+    }
+}
+
