@@ -21,6 +21,5 @@ class Downloader:
         df.set_index('datetime', inplace=True)
         tmp = wrap(df)
         tmp = tmp[self.tech_indicator]
-        tmp = tmp.drop(['high', 'low'], axis=1)
         return df
 
