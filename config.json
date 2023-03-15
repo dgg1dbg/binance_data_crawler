@@ -6,6 +6,7 @@
     "data":{
         "symbol": "BTC/USDT",
         "since": "2022-11-24T00:00:00Z",
+        "until": "2023-02-24T00:00:00Z",
         "timeframe": "4h",
         "tech_indicator": ["high_5_sma", "high_5_mstd", "vwma_5", "boll", "boll_ub", "boll_lb"]
     },

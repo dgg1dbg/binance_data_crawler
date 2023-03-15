@@ -1,11 +1,12 @@
 import pandas as pd
 from stockstats import wrap
 class Downloader:
-    def __init__(self, binance, symbol, timeframe, since, tech_indicator):
+    def __init__(self, binance, symbol, timeframe, since, until, tech_indicator):
         self.binance = binance
         self.symbol = symbol
         self.timeframe = timeframe
         self.since = binance.parse8601(since)
+        self.until = binance.parse8601(until)
         self.tech_indicator = tech_indicator
     
     def download(self):
@@ -17,6 +18,7 @@ class Downloader:
             if len(x) < 500:
                 break
         df = pd.DataFrame(y, columns=['datetime', 'open', 'high', 'low', 'close', 'volume'])
+        df = df[df.datetime <= self.until]
         df['datetime'] = pd.to_datetime(df['datetime'], unit='ms')
         df.set_index('datetime', inplace=True)
         tmp = wrap(df)
